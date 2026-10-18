@@ -1,0 +1,18 @@
+{
+  "name": "ecommerce-image-extractor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "淘宝/京东/拼多多商品详情页图片提取下载 Chrome 扩展",
+  "scripts": {
+    "icons": "node scripts/gen-icons.mjs",
+    "build": "node scripts/build.mjs",
+    "package": "node scripts/package.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.3.5",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  }
+}

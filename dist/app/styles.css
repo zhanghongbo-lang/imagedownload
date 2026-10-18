@@ -1,0 +1,366 @@
+:root {
+  --primary: #059669;
+  --primary-hover: #10b981;
+  --accent: #ea580c;
+  --bg: #ecfdf5;
+  --bg-2: #f0fdfa;
+  --fg: #064e3b;
+  --card: #ffffff;
+  --muted: #e8f1f3;
+  --muted-fg: #475569;
+  --border: #a7f3d0;
+  --danger: #dc2626;
+  --radius: 12px;
+  --shadow: 0 4px 16px rgba(6, 78, 59, 0.08);
+  --shadow-lg: 0 12px 32px rgba(6, 78, 59, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  color: var(--fg);
+  min-height: 100vh;
+}
+
+/* ---------- header ---------- */
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+}
+
+.app-header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.app-header__left {
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.app-subtitle {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--muted-fg);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 460px;
+}
+
+.app-header__stats {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.stat {
+  font-size: 14px;
+  color: var(--muted-fg);
+  white-space: nowrap;
+}
+
+.stat b {
+  color: var(--fg);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 2px;
+}
+
+.app-header__actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ---------- buttons ---------- */
+
+.btn {
+  border: none;
+  cursor: pointer;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease,
+    color 0.15s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+}
+
+.btn--outline:hover:not(:disabled) {
+  background: rgba(5, 150, 105, 0.08);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--muted-fg);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background: var(--muted);
+  color: var(--fg);
+}
+
+/* ---------- progress ---------- */
+
+.progress {
+  margin-top: 14px;
+}
+
+.progress__bar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--muted);
+  overflow: hidden;
+}
+
+.progress__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--primary-hover));
+  width: 0;
+  transition: width 0.2s ease;
+}
+
+.progress__text {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted-fg);
+}
+
+/* ---------- grid ---------- */
+
+.app-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: 16px;
+}
+
+/* ---------- card ---------- */
+
+.image-card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.image-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.image-card.is-selected {
+  outline: 2.5px solid var(--primary);
+  outline-offset: -2.5px;
+}
+
+.image-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: var(--muted);
+}
+
+.image-card__check {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.image-card__check input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.image-card__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid #cbd5e1;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.image-card__mark::after {
+  content: "";
+  width: 6px;
+  height: 11px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg) scale(0);
+  opacity: 0;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  margin-top: -3px;
+}
+
+.image-card__check input:checked + .image-card__mark {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.image-card__check input:checked + .image-card__mark::after {
+  transform: rotate(45deg) scale(1);
+  opacity: 1;
+}
+
+.image-card__zoom {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.image-card__zoom svg {
+  width: 16px;
+  height: 16px;
+}
+
+.image-card:hover .image-card__zoom {
+  opacity: 1;
+}
+
+/* ---------- preview ---------- */
+
+.preview-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(4, 30, 22, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.preview-overlay img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  background: #fff;
+}
+
+.preview-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.preview-close:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.preview-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- empty state ---------- */
+
+.empty-state {
+  max-width: 480px;
+  margin: 12vh auto 0;
+  text-align: center;
+  color: var(--muted-fg);
+}
+
+.empty-state h2 {
+  color: var(--fg);
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  line-height: 1.7;
+}

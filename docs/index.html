@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>电商图片提取下载 - 淘宝 / 京东 / 拼多多商品图片一键下载</title>
+    <meta
+      name="description"
+      content="电商图片提取下载 Chrome 扩展：一键提取淘宝、京东、拼多多商品详情页全部图片，新页面预览勾选，批量下载为 PNG（多张自动打包 ZIP）。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="#top" aria-label="回到首页">
+          <span class="brand__logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3v12" />
+              <path d="m7 10 5 5 5-5" />
+              <path d="M5 21h14" />
+            </svg>
+          </span>
+          <span class="brand__name">电商图片提取下载</span>
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="主导航">
+          <a href="#features">功能介绍</a>
+          <a href="#install">安装教程</a>
+          <a href="./download/电商图片提取下载-v1.0.0.zip" class="nav-cta" download>立即下载</a>
+        </nav>
+
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="打开菜单">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero__inner">
+          <div class="hero__content reveal">
+            <p class="eyebrow">Chrome 浏览器扩展</p>
+            <h1 class="hero__title">
+              一键提取商品图片，<br /><span class="grad">批量下载为 PNG</span>
+            </h1>
+            <p class="hero__desc">
+              在淘宝、京东、拼多多的商品详情页点击「获取图片」，即可提取全部商品图片，
+              在新页面预览勾选，单张下载为 PNG，多张自动打包为 ZIP。
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#install">查看安装教程</a>
+              <a class="btn btn--ghost" href="#features">了解功能</a>
+            </div>
+            <p class="hero__platforms">
+              <span class="dot-sep">支持平台</span>
+              <span class="platform-badge">淘宝</span>
+              <span class="platform-badge">京东</span>
+              <span class="platform-badge">拼多多</span>
+            </p>
+          </div>
+
+          <div class="hero__visual reveal">
+            <div class="mockup" aria-hidden="true">
+              <div class="mockup__bar">
+                <span class="mockup__dot"></span>
+                <span class="mockup__dot"></span>
+                <span class="mockup__dot"></span>
+                <span class="mockup__url">item.taobao.com</span>
+              </div>
+              <div class="mockup__body">
+                <div class="mockup__toolbar">
+                  <span class="mockup__stat">共 <b>12</b> 张</span>
+                  <span class="mockup__stat">已选 <b>8</b> 张</span>
+                  <span class="mockup__pill">下载所选</span>
+                </div>
+                <div class="mockup__grid">
+                  <span class="tile t1"><i class="tick"></i></span>
+                  <span class="tile t2"><i class="tick"></i></span>
+                  <span class="tile t3"><i class="tick"></i></span>
+                  <span class="tile t4"></span>
+                  <span class="tile t5"><i class="tick"></i></span>
+                  <span class="tile t6"><i class="tick"></i></span>
+                  <span class="tile t7"></span>
+                  <span class="tile t8"><i class="tick"></i></span>
+                </div>
+              </div>
+              <span class="mockup__float" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3v12" />
+                  <path d="m7 10 5 5 5-5" />
+                  <path d="M5 21h14" />
+                </svg>
+                获取图片
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="section" id="features">
+        <div class="container">
+          <div class="section__head reveal">
+            <p class="eyebrow">核心功能</p>
+            <h2 class="section__title">简洁高效，几步搞定</h2>
+            <p class="section__desc">从提取到下载，全程只需要点几下。</p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card reveal">
+              <span class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" /></svg>
+              </span>
+              <h3 class="feature-card__title">一键提取</h3>
+              <p class="feature-card__desc">商品详情页右下角悬浮「获取图片」按钮，点击即提取全部商品图片。</p>
+            </article>
+
+            <article class="feature-card reveal">
+              <span class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" /><circle cx="12" cy="12" r="3" /></svg>
+              </span>
+              <h3 class="feature-card__title">懒加载识别</h3>
+              <p class="feature-card__desc">自动读取懒加载图片地址，滚动加载的商品详情图也能完整获取。</p>
+            </article>
+
+            <article class="feature-card reveal">
+              <span class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+              </span>
+              <h3 class="feature-card__title">图片库预览</h3>
+              <p class="feature-card__desc">新标签页网格展示所有图片，点击缩略图放大预览，Esc 一键关闭。</p>
+            </article>
+
+            <article class="feature-card reveal">
+              <span class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4" /><path d="m8.5 12 2.5 2.5 5-5" /></svg>
+              </span>
+              <h3 class="feature-card__title">批量选择</h3>
+              <p class="feature-card__desc">支持全选、取消全选与单选，已选数量实时统计，交互直观方便。</p>
+            </article>
+
+            <article class="feature-card reveal">
+              <span class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12" /><path d="m7 10 5 5 5-5" /><path d="M5 21h14" /></svg>
+              </span>
+              <h3 class="feature-card__title">PNG / ZIP 下载</h3>
+              <p class="feature-card__desc">下载单张直接保存为 PNG，下载多张自动打包为一个 ZIP 压缩包。</p>
+            </article>
+
+            <article class="feature-card reveal">
+              <span class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2" /><path d="M8 21h8" /><path d="M12 17v4" /></svg>
+              </span>
+              <h3 class="feature-card__title">多平台适配</h3>
+              <p class="feature-card__desc">覆盖淘宝、京东、拼多多三大平台，界面简洁美观、现代清爽。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Install -->
+      <section class="section section--alt" id="install">
+        <div class="container">
+          <div class="section__head reveal">
+            <p class="eyebrow">安装教程</p>
+            <h2 class="section__title">三步完成安装</h2>
+            <p class="section__desc">无需登录、无需付费，本地即可加载使用。</p>
+          </div>
+
+          <ol class="steps">
+            <li class="step reveal">
+              <span class="step__num" aria-hidden="true">1</span>
+              <h3 class="step__title">下载压缩包</h3>
+              <p class="step__desc">点击右上角「立即下载」，下载扩展压缩包并解压，得到一个包含 <code>manifest.json</code> 的文件夹。</p>
+            </li>
+            <li class="step reveal">
+              <span class="step__num" aria-hidden="true">2</span>
+              <h3 class="step__title">加载扩展</h3>
+              <p class="step__desc">打开 <code>chrome://extensions</code>，开启右上角「开发者模式」，点击「加载已解压的扩展程序」，选择上一步解压出来的文件夹。</p>
+            </li>
+            <li class="step reveal">
+              <span class="step__num" aria-hidden="true">3</span>
+              <h3 class="step__title">开始使用</h3>
+              <p class="step__desc">打开淘宝 / 京东 / 拼多多任意商品详情页，点击右下角「获取图片」按钮即可。</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Closing CTA -->
+      <section class="section cta">
+        <div class="container cta__inner reveal">
+          <h2 class="cta__title">现在就开始提取商品图片</h2>
+          <p class="cta__desc">轻量、免费、开箱即用。</p>
+          <a class="btn btn--primary" href="#install">查看安装教程</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p class="site-footer__brand">电商图片提取下载</p>
+        <p class="site-footer__note">Chrome 浏览器扩展 · 支持淘宝 / 京东 / 拼多多</p>
+      </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
